@@ -48,6 +48,10 @@ namespace WebStore.Controllers
         public IActionResult ShowEmployees()
         {
             return View(_employees);
-        } 
+        }
+        public IActionResult ShowEmployeeDescription(int id = 1)
+        {
+            return View(_employees[id-1]);
+        }
     }
 }

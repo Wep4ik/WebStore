@@ -1,5 +1,4 @@
-﻿@using WebStore.Models
-@model IEnumerable<WebStore.Models.Employee>
+﻿@model IEnumerable<WebStore.Models.Employee>
 
 <!DOCTYPE html>
 
@@ -31,10 +30,13 @@
                     <td>@employee.PatronimicName</td>
                     <td>@employee.Age</td>
                     <td>@employee.Birthday.ToString("dd/MM/yyyy")</td>
-                    <td>@employee.DepartamentName</td>
+                    <td>
+                        <a href="~/home/showemployeedescription/@employee.Id">@employee.DepartamentName</a>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
+    <a href="~/">Main</a>
 </body>
 </html>
