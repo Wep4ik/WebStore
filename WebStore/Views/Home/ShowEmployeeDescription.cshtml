@@ -1,15 +1,37 @@
-﻿ 
-@model WebStore.Models.Employee 
+﻿@model WebStore.Models.Employee
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title>title</title>
+    <title>Employee details</title>
 </head>
 <body>
-<div>
-      <h3>@Model.FirstName</h3>
-</div>
+    <div>
+
+        <h1>Employee details</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Patronymic</th>
+                    <th>Birthday</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.FirstName</td>
+                    <td>@Model.LastName</td>
+                    <td>@Model.PatronimicName</td>
+                    <td>@Model.Birthday.ToString("d")</td>
+                    <td>@Model.Age</td>
+                    <td>@Model.DepartamentName</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

@@ -17,7 +17,7 @@
                 <td>Patronimyc</td>
                 <td>Age</td>
                 <td>Birthday</td>
-                <td>Department</td>
+                <td>Department</td> 
             </tr>
         </thead>
         <tbody>
@@ -30,8 +30,9 @@
                     <td>@employee.PatronimicName</td>
                     <td>@employee.Age</td>
                     <td>@employee.Birthday.ToString("dd/MM/yyyy")</td>
+                    <td>@employee.DepartamentName</td>
                     <td>
-                        <a href="~/home/showemployeedescription/@employee.Id">@employee.DepartamentName</a>
+                        <a href="~/home/showemployeedescription/@employee.Id">Details</a>
                     </td>
                 </tr>
             }
