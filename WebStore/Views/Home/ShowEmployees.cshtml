@@ -1,0 +1,40 @@
+﻿@using WebStore.Models
+@model IEnumerable<WebStore.Models.Employee>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Employee table</title>
+</head>
+<body>
+    <table>
+        <caption>Employee list</caption>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>First name</td>
+                <td>Last name</td>
+                <td>Patronimyc</td>
+                <td>Age</td>
+                <td>Birthday</td>
+                <td>Department</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.PatronimicName</td>
+                    <td>@employee.Age</td>
+                    <td>@employee.Birthday.ToString("dd/MM/yyyy")</td>
+                    <td>@employee.DepartamentName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
