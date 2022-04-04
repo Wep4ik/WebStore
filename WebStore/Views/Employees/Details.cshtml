@@ -1,0 +1,30 @@
+﻿@model WebStore.Models.Employee
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Patronymic</th>
+            <th>Birthday</th>
+            <th>Age</th>
+            <th>Department</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>@Model.FirstName</td>
+            <td>@Model.LastName</td>
+            <td>@Model.PatronimicName</td>
+            <td>@Model.Birthday.ToString("d")</td>
+            <td>@Model.Age</td>
+            <td>@Model.DepartamentName</td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <a asp-controller="Employees" asp-action="Index">Employees</a>
+    </p>
+</div>
