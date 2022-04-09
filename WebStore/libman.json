@@ -8,11 +8,6 @@
     },
     {
       "provider": "cdnjs",
-      "library": "twitter-bootstrap@3.0.3",
-      "destination": "wwwroot/lib/bootstrap/"
-    },
-    {
-      "provider": "cdnjs",
       "library": "font-awesome@4.0.3",
       "destination": "wwwroot/lib/font-awesome/"
     },
@@ -25,6 +20,11 @@
       "provider": "cdnjs",
       "library": "scrollup@2.3.2",
       "destination": "wwwroot/lib/scrollup/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "twitter-bootstrap@3.0.3",
+      "destination": "wwwroot/lib/bootstrap/"
     }
   ]
 }
