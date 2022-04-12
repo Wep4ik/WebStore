@@ -1,13 +1,7 @@
 ﻿@model IEnumerable<WebStore.Models.Employee>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Employee table</title>
-</head>
-<body>
-    <table>
+<div class="container">
+    <table class="table">
         <caption>Employee list</caption>
         <thead>
             <tr>
@@ -17,7 +11,7 @@
                 <td>Patronimyc</td>
                 <td>Age</td>
                 <td>Birthday</td>
-                <td>Department</td> 
+                <td>Department</td>
             </tr>
         </thead>
         <tbody>
@@ -32,12 +26,15 @@
                     <td>@employee.Birthday.ToString("dd/MM/yyyy")</td>
                     <td>@employee.DepartamentName</td>
                     <td>
-                        <a href="~/home/showemployeedescription/@employee.Id">Details</a>
+                        <a  asp-controller="Employees" asp-action="Details" asp-route-id="@employee.Id">Details</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <a href="~/">Main</a>
-</body>
-</html>
+
+    <p>
+        <a asp-controller="Home" asp-action="Index">Main</a>
+    </p>
+</div>
+
