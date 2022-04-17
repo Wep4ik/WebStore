@@ -2,7 +2,7 @@
 
 <div class="container">
     <table class="table">
-        <caption>Employee list</caption>
+        <caption class="header_top">Employee list</caption>
         <thead>
             <tr>
                 <td>Id</td>
@@ -26,15 +26,23 @@
                     <td>@employee.Birthday.ToString("dd/MM/yyyy")</td>
                     <td>@employee.DepartamentName</td>
                     <td>
-                        <a  asp-controller="Employees" asp-action="Details" asp-route-id="@employee.Id">Details</a>
+                        <a asp-controller="Employees" asp-action="Details" asp-route-id="@employee.Id">Details</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Employees" asp-action="Edit" asp-route-id="@employee.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.Id">Delete</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 
-    <p>
-        <a asp-controller="Home" asp-action="Index">Main</a>
+    <p class="row">
+        <a  class="col-md-10" asp-controller="Home" asp-action="Index">Back to home</a>
+
+        <a class="col-md-2" asp-controller="Employees" asp-action="Create">Create new employee</a>
     </p>
 </div>
 

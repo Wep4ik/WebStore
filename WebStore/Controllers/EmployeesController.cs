@@ -39,16 +39,44 @@ public class EmployeesController : Controller
         },
     };
 
-    public IActionResult Details(int id)
-    {
-        var employee = _employees.FirstOrDefault(x => x.Id == id);
+    public IActionResult Index() => View(_employees);
 
-        if (employee == null) return NotFound();
+    public IActionResult? Details(int id)
+    {
+        if (GetEmployeeById(id, out Employee? employee, out IActionResult? notFound)) return notFound;
 
         return View(employee);
     }
-    public IActionResult Index()
+
+
+    public IActionResult Create()
     {
-        return View(_employees);
+        return View();
+    }
+
+    public IActionResult? Edit(int id)
+    {
+        return GetEmployeeById(id, out Employee? employee, out IActionResult? notFound) ? notFound : View(employee);
+    }
+
+    public IActionResult? Delete(int id)
+    {
+        return GetEmployeeById(id, out Employee? employee, out IActionResult? notFound) ? notFound : View(employee);
+    }
+
+    private bool GetEmployeeById(int id, out Employee? employee, out IActionResult? notFound)
+    {
+        employee = _employees.FirstOrDefault(x => x.Id == id);
+
+        if (employee != null)
+        {
+            notFound = null;
+
+            return false;
+        }
+
+        notFound = NotFound();
+
+        return true;
     }
 }
