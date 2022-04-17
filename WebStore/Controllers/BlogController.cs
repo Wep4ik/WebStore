@@ -31,5 +31,8 @@ namespace WebStore.Controllers
         };
 
         public IActionResult Index() => View(_Blogs);
+
+        public IActionResult SinglePost(int id) => View();
+
     }
 }
