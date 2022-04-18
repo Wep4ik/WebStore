@@ -1,3 +1,5 @@
+using WebStore.Infrastructure.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
@@ -13,8 +15,12 @@ app.UseStaticFiles();
 
 //app.MapGet("/", () => app.Configuration["ServerGreetings"]);
 
+
 // defaul controler map
-//app.MapDefaultControllerRoute();
+app.MapDefaultControllerRoute();
+
+app.UseMiddleware<TestMiddleware>();
+
 
 app.MapControllerRoute(
     name: "defaul",
